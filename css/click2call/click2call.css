@@ -1,11 +1,11 @@
 .cl_c2k_btn { background: #43b61b; border: 1px solid #cccccc; margin: 0; padding: 0; cursor: pointer; }
 .cl_c2k_btn:hover { filter: Alpha(Opacity=85); opacity: .85; }
 .cl_c2k_btn .cl_c2k_status { font-size: 10px; float: right; margin-right: 3px; white-space: nowrap; overflow-x: hidden; display: inline-block; }
-.cl_c2k_btn .cl_c2k_label { font-size: 16px; white-space: nowrap; overflow-x: hidden; color: #ffffff; display: inline-block; }
+/* .cl_c2k_btn .cl_c2k_label { font-size: 16px; white-space: nowrap; overflow-x: hidden; color: #ffffff; display: inline-block; } */
 
 
-#demo_text LABEL { display: inline-block; width: 110px; }
-#demo_text INPUT { display: inline-block; width: 150px; margin-top: .3em; }
+/* #demo_text LABEL { display: inline-block; width: 110px; }
+#demo_text INPUT { display: inline-block; width: 150px; margin-top: .3em; } */
 .cl_optionsmenu_popup { margin: 0; padding: 0; display: block; }
 .cl_optionsmenu_list { margin: 0; padding: 0; display: block; background: #ccc; border: 1px solid #ccc; border-radius: .3em; float: left; }
 .cl_optionsmenu_list li { margin: 0; padding: 0; width: 100%; display: inline-block; float: left; clear: both; margin-top: 1px; background: #dfdfdf; cursor: pointer; color: #393939; }

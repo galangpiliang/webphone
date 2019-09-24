@@ -354,15 +354,49 @@ webphone_api.onLoaded(function ()
         var conf = '<div style="text-align: center;">' +
             '<br />' +
             '<label for="mdemo_serveraddress" title="VoIP server IP address or domain name">Serveraddress:</label>' +
-            '<input type="text" name="mdemo_serveraddress" id="mdemo_serveraddress" placeholder="VoIP server address" title="VoIP server IP address or domain name" autocapitalize="off" /><br />' +
+            '<input type="text" name="mdemo_serveraddress" id="mdemo_serveraddress" placeholder="VoIP server address" title="VoIP server IP address or domain name" autocapitalize="off" /><br />' +            
             '<label for="mdemo_username" title="SIP account username">Username:</label>' +
-            '<input type="text" name="mdemo_username" id="mdemo_username" placeholder="Username" title="SIP account username" autocapitalize="off" /><br />' +
+            '<input type="text" name="mdemo_username" id="mdemo_username" placeholder="Username" title="SIP account username" autocapitalize="off" /><br />' +            
             '<label for="mdemo_password" title="SIP account password">Password:</label>' +
-            '<input type="text" name="mdemo_password" id="mdemo_password" placeholder="Password" title="SIP account password" autocapitalize="off" /><br />' +
+            '<input type="text" name="mdemo_password" id="mdemo_password" placeholder="Password" title="SIP account password" autocapitalize="off" /><br />' +            
             '<label for="mdemo_callto" title="Destination number to call">Callto:</label>' +
-            '<input type="text" name="mdemo_callto" id="mdemo_callto" placeholder="Callto" title="Destination number to call" autocapitalize="off" /><br />' +
+            '<input type="text" name="mdemo_callto" id="mdemo_callto" placeholder="Callto" title="Destination number to call" autocapitalize="off" /><br />' +            
             '<span style="font-style: italic; font-size: .85em; ">*The above form will not be displayed in your final build, these settings will be preconfigured.</span><br />' +
             '</div>';
+
+        var conf = 
+        
+            '<form>' +
+            '    <div class="form-group row ">' +
+            '        <label for="mdemo_serveraddress" title="VoIP server IP address or domain name" class="col-sm col-form-label">Serveraddress</label>' +
+            '        <div class="col-sm">' +
+            '        <input type="text" class="form-control" name="mdemo_serveraddress" id="mdemo_serveraddress" placeholder="VoIP server address" title="VoIP server IP address or domain name" autocapitalize="off" />' +
+            '        </div>' +
+            '    </div>' +
+
+            '    <div class="form-group row">' +
+            '        <label for="mdemo_username" title="SIP account username" class="col-sm col-form-label">Username</label>' +
+            '        <div class="col-sm">' +
+            '        <input type="text" class="form-control" name="mdemo_username" id="mdemo_username" placeholder="Username" title="SIP account username" autocapitalize="off" />' +
+            '        </div>' +
+            '    </div>' +
+
+            '    <div class="form-group row">' +
+            '        <label for="mdemo_password" title="SIP account password" class="col-sm col-form-label">Password</label>' +
+            '        <div class="col-sm">' +
+            '        <input type="text" class="form-control" name="mdemo_password" id="mdemo_password" placeholder="Password" title="SIP account password" autocapitalize="off" />' +
+            '        </div>' +
+            '    </div>' +
+
+            '    <div class="form-group row">' +
+            '        <label for="mdemo_callto" title="Destination number to call" class="col-sm col-form-label">Callto</label>' +
+            '        <div class="col-sm">' +
+            '        <input type="text" class="form-control" name="mdemo_callto" id="mdemo_callto" placeholder="Callto" title="Destination number to call" autocapitalize="off" />' +
+            '        </div>' +
+            '    </div>' +
+            '</form>'
+        
+        ;
     
         demotext.innerHTML += conf;
     }
@@ -378,9 +412,16 @@ webphone_api.onLoaded(function ()
     
     for (var i = 0; i < ELIMIT; i++)
     {
-        var chtml = '<br /><button id="c2k_btn_' + i + '" class="cl_c2k_btn" onmousedown="Btnc2kMousedown(event, ' + i + ')" oncontextmenu="Btnc2kContextmenu(event, ' + i + ')" onmouseup="Btnc2kOnmouseup(event, ' + i + ')">' +
+        var chtml = 
             '<span id="c2k_status_' + i + '" class="cl_c2k_status"></span><br>' +
-            '<span id="c2k_label_' + i + '" class="cl_c2k_label">Call</span></button>';
+            '    <div class="form-group row">' +
+            '    <div class="col-sm tengah">' +
+            '        <button type="submit" id="c2k_btn_' + i + '" class="btn btn-primary tombol cl_c2k_btn"' +
+            '        onmousedown="Btnc2kMousedown(event, ' + i + ')" oncontextmenu="Btnc2kContextmenu(event, ' + i + 
+            '        )" onmouseup="Btnc2kOnmouseup(event, ' + i + ')">' +
+            '        <span id="c2k_label_' + i + '" class="cl_c2k_label">Call</span></button>'
+            '    </div>' +
+            '    </div>';
     
         var c2k_container = document.getElementById('c2k_container_' + i);
         
@@ -413,14 +454,14 @@ webphone_api.onLoaded(function ()
             
             chwindow = chwindow + '<div id="video_container" style="display: none;"></div>';
 
-            contextmenu = '' +
-            '<div id="optionsmenu_popup_' + i + '" class="cl_optionsmenu_popup" style="display: none;">' +
-                '<ul class="cl_optionsmenu_list">' +
-                    '<li onclick="OptionsMenuClick(' + i + ', 1)"><span>Chat</span></li>' +
-                    '<li onclick="OptionsMenuClick(' + i + ', 2)"><span>Call</span></li>' +
-                    '<li onclick="OptionsMenuClick(' + i + ', 3)"><span>Video Call</span></li>' +
-                '</ul>' +
-            '</div>';
+            // contextmenu = '' +
+            // '<div id="optionsmenu_popup_' + i + '" class="cl_optionsmenu_popup" style="display: none;">' +
+            //     '<ul class="cl_optionsmenu_list">' +
+            //         '<li onclick="OptionsMenuClick(' + i + ', 1)"><span>Chat</span></li>' +
+            //         '<li onclick="OptionsMenuClick(' + i + ', 2)"><span>Call</span></li>' +
+            //         '<li onclick="OptionsMenuClick(' + i + ', 3)"><span>Video Call</span></li>' +
+            //     '</ul>' +
+            // '</div>';
         }
         
         c2k_container.innerHTML = chtml + chwindow + contextmenu;

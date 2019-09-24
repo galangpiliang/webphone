@@ -13,7 +13,17 @@ http://www.yourwebsite.com/webphonedir/click2call.html?wp_serveraddress=YOURSIPD
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Click to call</title>
+    <title>Sample Click to call</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/click2call/style.css">
+
+    <!-- My Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+
     
     <link rel="stylesheet" href="css/click2call/click2call.css" />
     <script src="webphone_api.js?jscodeversion=783"></script>
@@ -27,18 +37,51 @@ http://www.yourwebsite.com/webphonedir/click2call.html?wp_serveraddress=YOURSIPD
             webphone_api.setparameter('username', 'USERNAME');      // SIP account username
             webphone_api.setparameter('password', 'PASSWORD');      // SIP account password (see the "Parameters encryption" in the documentation)
             webphone_api.setparameter('callto', 'DESTINATION');        // destination number to call
-            webphone_api.setparameter('autoaction', '0');    // 0=nothing (default), 1=call, 2=chat, 3=video call
+            webphone_api.setparameter('autoaction', '1');    // 0=nothing (default), 1=call, 2=chat, 3=video call
         });
     </script>
 </head>
-<body style="margin: 0; font-family: Verdana ; font-size: 12px; color:#2e3d47; line-height: 155%;">
-    <div style="font-family: Verdana ; font-size: 16px; color:#4eaaec; text-align:center">Click to call</div><br><br>
+<body>
 
-    <span id="demo_text">This is a click to call implementation of the webphone. You can easily modify this after your needs or create your custom click 2 call soltion. <br />See the "Click to call" section in the documentation about more details. <br /></span><br />	
+    <!-- Navbar -->
 
-    <div id="c2k_container_0" title="" style="text-align: center;">
-    <!--rewrite the CALLTO and uncomment the following line to enable support for ancient browsers-->
-    <!--<a href="tel://CALLTO" id="c2k_alternative_url">CALLTO</a>-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sample Click To Call</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">About</a>
+                <a class="nav-item btn btn-primary tombol" href="#">Contact Us</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Akhir Navbar -->
+
+    <!-- Jumbotron -->
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container" >
+            <div class="row justify-content-center">
+                <div class="col-6 display-4">
+                    <span id="demo_text"></span>
+                    <div id="c2k_container_0" title="" style="text-align: center;"></div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Akhir Jumbotron -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity                          = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin = "anonymous"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin = "anonymous"></script>
+    <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity    = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin = "anonymous"></script>
 </body>
 </html>
